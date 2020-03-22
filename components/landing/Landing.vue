@@ -3,7 +3,7 @@
     <div class="landing__sale">
       <div class="landing__sale__container">
         <h1>Scrapper<span>Pro</span></h1>
-        <p>Custom built scripts with onclick functionality</p>
+        <p>Custom built scripts with one-click functionality</p>
       </div>
     </div>
     <div class="landing__log">
@@ -18,6 +18,7 @@
           <label for="password">Password</label>
           <input name="password" type="password" />
           <input type="submit" value="Submit" class="button--danger" />
+          <a href="#">Forgot Password?</a>
         </form>
       </div>
     </div>

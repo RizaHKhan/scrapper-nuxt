@@ -1,10 +1,5 @@
 <template>
   <div class="footer">
-    SrapperPro {{ getFullYear() }}
+    <p>SrapperPro 2020</p>
   </div>
 </template>
-
-<script>
-export default {
-
-}

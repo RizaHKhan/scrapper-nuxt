@@ -38,6 +38,10 @@
             color: $subColor;
           }
         }
+
+        a {
+          grid-column: 1 / -1;
+        }
       }
     }
   }

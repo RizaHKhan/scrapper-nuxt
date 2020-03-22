@@ -11,3 +11,13 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+a {
+  text-decoration: none;
+  color: rgba(0,0,0,.5);
+  transition: all .5s ease;
+
+  &:hover {
+    color: rgba(0,0,0,.9);
+  }
+}
