@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="yellow">Hello</h1>
+    <nuxt-view></nuxt-view>
   </div>
 </template>
 

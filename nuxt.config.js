@@ -14,7 +14,11 @@ module.exports = {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,900&display=swap', rel: 'stylesheet' },
+      { href: 'https://fonts.googleapis.com/css?family=Raleway:200,200i,300,400,400i,500,600,600i,700,900&display=swap', rel: 'stylesheet' }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -38,7 +42,12 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    '@nuxtjs/axios'
+  ],
+  axios: {
+    baseUrl: process.env.baseURL || "http://localhost:3000"
+  },
   /*
    ** Build configuration
    */
