@@ -18,6 +18,10 @@
     @include xl {
       font-size: 6rem;
     }
+
+    @include rwd {
+      font-size: 8rem;
+    }
   }
 
   p {
@@ -32,6 +36,4 @@
       font-size: 1.5rem;
     }
   }
-
-
 }

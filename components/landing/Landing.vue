@@ -16,7 +16,7 @@
         <input name="email" type="email" />
         <label for="password">Password</label>
         <input name="password" type="password" />
-        <input type="submit" value="Submit" class="submit" />
+        <input type="submit" value="Submit" class="button--danger" />
       </form>
     </div>
   </div>
