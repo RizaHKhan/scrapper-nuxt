@@ -10,7 +10,9 @@
   border: solid 1px $subColor;
 
   &:hover {
+    background: $red;
     border-color: $red;
+    color: $headerColor;
   }
 }
 

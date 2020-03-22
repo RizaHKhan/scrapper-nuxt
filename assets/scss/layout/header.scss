@@ -1,11 +1,14 @@
 .header {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
 
 
-  @include md {
-    flex-direction: row;
+  @include lg {
+    display: flex;
     justify-content: space-between;
+
   }
 
   &__company {
@@ -16,20 +19,21 @@
   }
 
   &__nav {
-    margin-top: 1.5em;
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 
-    @include sm {
+    @include md {
+      display: flex;
       justify-content: center;
 
       li {
-        margin: 0 .25em;
-      }
-    }
+        margin: 2em 1em;
 
-    @include md {
-      margin-top: 1em;
+        @include lg {
+          margin: .5em 0 0 1em;
+        }
+      }
     }
   }
 }

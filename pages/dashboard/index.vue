@@ -1,11 +1,18 @@
 <template>
   <div class="content">
-    <h1>Content</h1>
+    <Scripts />
+    <Output />
   </div>
 </template>
 
 <script>
+import Scripts from '@/components/Scripts'
+import Output from '@/components/Output'
 export default {
-  layout: 'dashboard'
+  layout: 'dashboard',
+  components: {
+    Scripts,
+    Output
+  }
 }
 </script>

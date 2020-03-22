@@ -1,3 +1,5 @@
 <template>
-  <div class="sidebar"></div>
+  <div class="sidebar component">
+    <h2 class="title">Sidebar</h2>
+  </div>
 </template>

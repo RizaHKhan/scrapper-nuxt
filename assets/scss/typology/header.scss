@@ -3,16 +3,19 @@
   &__nav {
 
     li {
+      margin: auto 0;
       text-align: center;
       list-style: none;
+
+      .nuxt-link-exact-active {
+        background: $red;
+        border-color: $red;
+        color: $headerColor;
+      }
 
       a {
         color: $subColor;
         transition: all .5s ease;
-
-        &:hover {
-          color: $red;
-        }
       }
     }
   }

@@ -7,12 +7,12 @@ $yellow: yellow;
 // Font Colors
 $headerColor: rgba(255, 255, 255, .84);
 $subColor: rgba(255, 255, 255, .5);
-$red: #f45959;
+$red: #992e2e;
 
 // Gradients
-$background: linear-gradient(321deg, rgba(98,90,113,1) 0%, rgba(34,34,44,1) 51%);
+$background: radial-gradient(rgba(98,90,113,1) 0%, rgba(34,34,41,1) 99%);
 $white: linear-gradient(321deg, rgba(249,247,251,1) 0%, rgba(230,230,246,1) 52%);
-
+$dark: linear-gradient(90deg, #150000 0%, #22222c 99%);
 
 // Radius
-$radius: 4px;
+$radius: .25em;

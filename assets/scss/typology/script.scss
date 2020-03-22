@@ -1,0 +1,27 @@
+.scripts {
+  display: grid;
+  grid-gap: 1.5em;
+  overflow: auto;
+
+  &__list {
+    display: grid;
+    grid-gap: .5em;
+
+
+    &__item {
+      display: flex;
+      padding: 1em;
+      justify-content: space-between;
+      transition: all .5s ease;
+      border: solid 1px transparent;
+
+      &:hover {
+        border: solid 1px $subColor;
+      }
+
+      p {
+        margin: auto 0;
+      }
+    }
+  }
+}
