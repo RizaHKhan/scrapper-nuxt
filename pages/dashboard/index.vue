@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
     <h1>Dashboard</h1>
-    <fa :icon="['fas', 'dollar-sign']" />
+    <font-awesome-icon far icon="spinner" />
   </div>
 </template>
 

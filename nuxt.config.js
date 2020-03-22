@@ -27,11 +27,14 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['@/assets/scss/index.scss'],
+  css: [
+    '@/assets/scss/index.scss',
+    '@fortawesome/fontawesome-svg-core/styles.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/fontawesome.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -43,8 +46,7 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    '@nuxtjs/axios',
-    'nuxt-fontawesome'
+    '@nuxtjs/axios'
   ],
   axios: {
     baseUrl: process.env.baseURL || "http://localhost:3000"
