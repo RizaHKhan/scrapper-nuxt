@@ -1,11 +1,25 @@
+require('dotenv').config({path: __dirname + '/config/.env'})
+const cors = require('cors')
 const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 const app = express()
+const mongoose = require('mongoose')
 
+mongoose.connect(process.env.DB, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+})
+const db = mongoose.connection
 
+db.on('error', console.error.bind(console, 'connection-error:'))
+db.once('open', function () {
+  console.log('Connection Established')
+})
 
-
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(cors())
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
