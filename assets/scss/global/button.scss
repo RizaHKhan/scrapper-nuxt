@@ -18,14 +18,10 @@
 
 .button--success {
   color: green;
-
-}
-
-.button--neutral {
-
 }
 
 .button--danger {
   @extend %button;
+  color: $headerColor;
   background: $red;
 }
