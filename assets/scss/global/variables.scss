@@ -3,3 +3,11 @@ $yellow: yellow;
 .yellow {
   color: $yellow;
 }
+
+// Font Colors
+$headerColor: rgba(255, 255, 255, .84);
+$subColor: rgba(255, 255, 255, .5);
+$red: #f45959;
+
+// Gradients
+$background: linear-gradient(321deg, rgba(98,90,113,1) 0%, rgba(34,34,44,1) 51%);

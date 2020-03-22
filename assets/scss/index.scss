@@ -1,6 +1,11 @@
 // Gloabl
+@import './global/breakpoint.scss';
+@import './global/global.scss';
 @import './global/variables.scss';
 
 // Typology
+@import './typology/landing.scss';
+
 
 // Layout
+@import './layout/landing.scss';

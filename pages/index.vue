@@ -1,11 +1,16 @@
 <template>
   <div class="container">
-    <nuxt-view></nuxt-view>
+    <Landing />
   </div>
 </template>
 
 <script>
+import Landing from '@/components/landing/Landing'
+
 export default {
-  layout: 'landing'
+  layout: 'landing',
+  components: {
+    Landing
+  }
 }
 </script>

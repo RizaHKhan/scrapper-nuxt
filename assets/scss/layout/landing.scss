@@ -1,0 +1,33 @@
+.landing {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include lg {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__sale {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__container {
+      margin: auto;
+    }
+  }
+
+  &__log {
+    display: flex;
+    margin: auto;
+
+    &__form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .submit {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}
