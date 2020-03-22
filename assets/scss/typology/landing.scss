@@ -1,39 +1,59 @@
-.landing__sale {
-  background: $background;
-  background-size: cover;
+.landing {
 
-  h1 {
-    color: $headerColor;
-    font-size: 4rem;
-    text-align: center;
+  &__sale {
+    background: $background;
+    background-size: cover;
 
-    span {
-      color: $red;
+    h1 {
+      color: $headerColor;
+      font-size: 4rem;
+      text-align: center;
+
+      span {
+        color: $red;
+      }
+
+      @include sm {
+        font-size: 5rem;
+      }
+
+      @include xl {
+        font-size: 6rem;
+      }
+
+      @include rwd {
+        font-size: 8rem;
+      }
     }
 
-    @include sm {
-      font-size: 5rem;
-    }
+    p {
+      color: $subColor;
+      font-weight: 200;
 
-    @include xl {
-      font-size: 6rem;
-    }
+      @include sm {
+        font-size: 1.2rem;
+      }
 
-    @include rwd {
-      font-size: 8rem;
+      @include xl {
+        font-size: 1.5rem;
+      }
     }
   }
 
-  p {
-    color: $subColor;
-    font-weight: 200;
+  &__log {
 
-    @include sm {
-      font-size: 1.2rem;
-    }
+    &__container {
 
-    @include xl {
-      font-size: 1.5rem;
+      &__form {
+        font-size: 1.2rem;
+
+        input {
+          font-size: 1rem;
+          margin: auto 0;
+          padding: .5em 1.5em;
+          border: 0;
+        }
+      }
     }
   }
 }

@@ -18,19 +18,25 @@
   }
 
   &__log {
-    display: flex;
-    margin: auto;
+    background: $white;
+    padding: 1em;
 
-    &__form {
-      display: grid;
-      grid-gap: .5em;
-      grid-template-columns: 1fr 1fr;
+    &__container {
+      height: 100%;
+      display: flex;
 
-      .button--danger {
-        grid-column: 1 / -1;
+      &__form {
+        margin: auto;
+        display: grid;
+        grid-gap: .5em;
+        grid-template-columns: 1fr 1fr;
 
-        &:hover {
-          color: $subColor;
+        .button--danger {
+          grid-column: 1 / -1;
+
+          &:hover {
+            color: $subColor;
+          }
         }
       }
     }
