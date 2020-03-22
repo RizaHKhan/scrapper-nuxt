@@ -5,6 +5,15 @@
   transition: all .5s ease;
 }
 
+.button {
+  @extend %button;
+  border: solid 1px $subColor;
+
+  &:hover {
+    border-color: $red;
+  }
+}
+
 .button--success {
   color: green;
 

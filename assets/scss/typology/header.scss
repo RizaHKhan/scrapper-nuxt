@@ -1,0 +1,19 @@
+.header {
+
+  &__nav {
+
+    li {
+      text-align: center;
+      list-style: none;
+
+      a {
+        color: $subColor;
+        transition: all .5s ease;
+
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}

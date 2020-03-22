@@ -2,7 +2,7 @@
   <div class="landing">
     <div class="landing__sale">
       <div class="landing__sale__container">
-        <h1>Scrapper<span>Pro</span></h1>
+        <h1 class="company">Scrapper<span>Pro</span></h1>
         <p>Custom built scripts with one-click functionality</p>
       </div>
     </div>

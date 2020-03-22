@@ -21,3 +21,11 @@ a {
     color: rgba(0,0,0,.9);
   }
 }
+
+.company {
+  color: $headerColor;
+
+  span {
+    color: $red;
+  }
+}
