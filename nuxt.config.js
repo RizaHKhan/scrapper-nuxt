@@ -43,7 +43,8 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-fontawesome'
   ],
   axios: {
     baseUrl: process.env.baseURL || "http://localhost:3000"

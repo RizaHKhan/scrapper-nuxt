@@ -13,6 +13,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@nuxtjs/axios": "^5.3.6",
     "@sendgrid/mail": "^6.5.2",
     "cors": "^2.8.5",
@@ -22,6 +25,7 @@
     "mongodb": "^3.5.2",
     "mongoose": "^5.8.11",
     "nuxt": "^2.0.0",
+    "nuxt-fontawesome": "^0.4.0",
     "puppeteer": "^2.1.1"
   },
   "devDependencies": {
