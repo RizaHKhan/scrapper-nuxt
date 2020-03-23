@@ -3,6 +3,11 @@ const cors = require('cors')
 const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
+
+// Requiring Routes
+const userRoutes = require('./routes/user')
+// const scriptRoutes = require('./routes/scripts')
+
 const app = express()
 const mongoose = require('mongoose')
 
@@ -20,6 +25,10 @@ db.once('open', function () {
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cors())
+
+// Routes
+app.use('/user', userRoutes)
+// app.use('/scripts', scriptRoutes)
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')

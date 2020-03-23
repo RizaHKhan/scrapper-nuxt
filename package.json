@@ -21,6 +21,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "@nuxtjs/axios": "^5.3.6",
     "@sendgrid/mail": "^6.5.2",
+    "bcrypt": "^4.0.1",
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",
     "dotenv": "^8.2.0",

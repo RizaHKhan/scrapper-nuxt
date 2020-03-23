@@ -17,10 +17,30 @@
           <input name="email" type="email" />
           <label for="password">Password</label>
           <input name="password" type="password" />
-          <input type="submit" value="Submit" class="button--danger" />
+          <input type="submit" @click="log()" value="Submit" class="button--danger" />
           <a href="#">Forgot Password?</a>
         </form>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import { mapActions } from 'vuex'
+
+export default {
+  data () {
+    return {
+      user: {
+        email: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    ...mapActions({
+      log: 'user/log'
+    })
+  }
+}
+</script>
