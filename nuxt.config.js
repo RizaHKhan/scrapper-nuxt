@@ -40,14 +40,14 @@ module.exports = {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    // '@nuxtjs/eslint-module'
   ],
   /*
    ** Nuxt.js modules
    */
   modules: ['@nuxtjs/axios'],
   axios: {
-    baseUrl: process.env.baseURL || `'http://localhost:3000'`
+    baseUrl: process.env.baseURL || '\'http://localhost:3000\''
   },
   /*
    ** Build configuration
@@ -56,6 +56,6 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend (config, ctx) {}
   }
 }

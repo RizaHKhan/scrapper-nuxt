@@ -1,4 +1,4 @@
-require('dotenv').config({path: __dirname + '/config/.env'})
+require('dotenv').config({ path: __dirname + '/config/.env' })
 const cors = require('cors')
 const express = require('express')
 const consola = require('consola')
@@ -34,7 +34,7 @@ app.use('/user', userRoutes)
 const config = require('../nuxt.config.js')
 config.dev = process.env.NODE_ENV !== 'production'
 
-async function start() {
+async function start () {
   // Init Nuxt.js
   const nuxt = new Nuxt(config)
 

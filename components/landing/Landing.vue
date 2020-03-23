@@ -10,14 +10,32 @@
       <div class="landing__log__container">
         <form class="landing__log__container__form">
           <label for="log">Login</label>
-          <input id="login" type="radio" name="log" value="login" checked v-mode="user.logType"/>
+          <input
+            id="login"
+            v-model="user.logType"
+            type="radio"
+            name="log"
+            value="login"
+            checked
+          />
           <label for="log">Register</label>
-          <input id="register" type="radio" name="log" value="register" v-mode="user.logType"/>
+          <input
+            id="register"
+            v-model="user.logType"
+            type="radio"
+            name="log"
+            value="register"
+          />
           <label for="email">Email</label>
-          <input name="email" type="email" v-model="user.email"/>
+          <input v-model="user.email" name="email" type="email" />
           <label for="password">Password</label>
-          <input name="password" type="password" v-model="user.password"/>
-          <input type="submit" value="Submit" class="button--danger" @click="log(user)"/>
+          <input v-model="user.password" name="password" type="password" />
+          <input
+            type="submit"
+            value="Submit"
+            class="button--danger"
+            @click="log(user)"
+          />
           <a href="#">Forgot Password?</a>
         </form>
       </div>
@@ -29,9 +47,10 @@
 import { mapActions } from 'vuex'
 
 export default {
-  data () {
+  data() {
     return {
       user: {
+        logType: [],
         email: '',
         password: ''
       }
