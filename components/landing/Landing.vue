@@ -10,14 +10,14 @@
       <div class="landing__log__container">
         <form class="landing__log__container__form">
           <label for="log">Login</label>
-          <input id="login" type="radio" name="log" value="login" checked />
+          <input id="login" type="radio" name="log" value="login" checked v-mode="user.logType"/>
           <label for="log">Register</label>
-          <input id="register" type="radio" name="log" value="register" />
+          <input id="register" type="radio" name="log" value="register" v-mode="user.logType"/>
           <label for="email">Email</label>
-          <input name="email" type="email" />
+          <input name="email" type="email" v-model="user.email"/>
           <label for="password">Password</label>
-          <input name="password" type="password" />
-          <input type="submit" @click="log()" value="Submit" class="button--danger" />
+          <input name="password" type="password" v-model="user.password"/>
+          <input type="submit" value="Submit" class="button--danger" @click="log(user)"/>
           <a href="#">Forgot Password?</a>
         </form>
       </div>
