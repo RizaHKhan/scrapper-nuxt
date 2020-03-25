@@ -6,7 +6,7 @@ const { Nuxt, Builder } = require('nuxt')
 
 // Requiring Routes
 const userRoutes = require('./routes/user')
-// const scriptRoutes = require('./routes/scripts')
+const scriptRoutes = require('./routes/scripts')
 
 const app = express()
 const mongoose = require('mongoose')
@@ -28,7 +28,7 @@ app.use(cors())
 
 // Routes
 app.use('/user', userRoutes)
-// app.use('/scripts', scriptRoutes)
+app.use('/scripts', scriptRoutes)
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
