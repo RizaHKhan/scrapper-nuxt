@@ -1,10 +1,15 @@
-import checklist from '../scripts/checlist'
+const checklist = require('../scripts/checlist')
 
-exports.checklist = async (req, res) => {
+exports.checklist = (req, res) => {
   try {
-    const data = await checklist
-    res.send(data)
-  } catch (error) {
-    res.status(400).send(error)
+    checklist().then((data) => {
+      console.log(data)
+      res.send(data)
+    }).catch(e => {
+      console.log(e)
+      res.send(e)
+    })
+  } catch (err) {
+    console.log(err)
   }
 }

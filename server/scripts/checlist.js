@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer')
 
 const checklist = async () => {
   const baseUrl = 'https://checklist-rk.herokuapp.com/'
-  const browser = await puppeteer.launch({ args: ['--no-sandbox'] })
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'], ignoreDefaultArgs: ['--disable-extensions'] })
   const page = await browser.newPage()
   await page.goto(baseUrl)
 
