@@ -1,8 +1,9 @@
-const checklist = require('../scripts/checlist')
+const checklist = require('../scripts/checklist')
+const stackoverflow = require('../scripts/stackoverflow')
 
 exports.checklist = (req, res) => {
   try {
-    checklist().then((data) => {
+    stackoverflow().then((data) => {
       console.log(data)
       res.send(data)
     }).catch(e => {
