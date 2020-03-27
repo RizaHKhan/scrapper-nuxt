@@ -1,5 +1,5 @@
 <template>
   <div class="meta component">
-    <h2>Meta</h2>
+    <h2 class="title">Meta</h2>
   </div>
 </template>

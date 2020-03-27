@@ -3,7 +3,7 @@ const stackoverflow = require('../scripts/stackoverflow')
 
 exports.checklist = (req, res) => {
   try {
-    stackoverflow().then((data) => {
+    checklist().then((data) => {
       console.log(data)
       res.send(data)
     }).catch(e => {

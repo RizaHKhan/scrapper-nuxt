@@ -10,7 +10,7 @@ export const getters = {}
 export const mutations = {}
 
 export const actions = {
-  async log (ctx, log) {
+  async log ({ commit }, log) {
     try {
       if (log.logType === 'register') {
         await axios.post('user/register', { email: log.email, password: log.password })
