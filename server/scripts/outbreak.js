@@ -10,7 +10,7 @@ const outbreak = async () => {
     const dataArray = []
     const cases = document.querySelectorAll('.card')
 
-    cases.forEach( item => {
+    cases.forEach(item => {
       try {
         const number = item.querySelector('.card-header').querySelector('.card-title').querySelector('strong')
         const nationality = item.querySelector('tbody').querySelectorAll('tr')[0].querySelector('td')
