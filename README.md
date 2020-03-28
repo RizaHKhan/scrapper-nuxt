@@ -51,8 +51,3 @@ $ npm run generate
 
 ## DATABASE CONNECTION
 Connection String: `mongo "mongodb+srv://to-do-list-s6ku5.mongodb.net/test" --username <username>`
-
-
-"build": "nuxt build",
-    // "start": "cross-env --max_old_space_size=4096 NODE_ENV=production node server/index.js",
-    "start": "node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js start",
