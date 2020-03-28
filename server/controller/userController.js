@@ -11,13 +11,11 @@ exports.register = async (req, res) => {
 }
 
 exports.login = async (req, res) => {
-  console.log('Trying To Login:', req.body)
-  res.send()
-
-  // try {
-  //   const user = await User.findByCredentials(req.body.email, req.body.password)
-  //   res.send(user)
-  // } catch (error) {
-  //   res.status(400).send(error)
-  // }
+  try {
+    const user = await User.findByCredentials(req.body.email, req.body.password)
+    const token = await user.generateAuthToken()
+    res.send({ user, token })
+  } catch (error) {
+    res.status(400).send(error)
+  }
 }

@@ -5,7 +5,7 @@ const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 
 // Requiring Routes
-const userRoutes = require('./routes/auth')
+const userRoutes = require('./routes/user')
 const scriptRoutes = require('./routes/scripts')
 
 const app = express()
@@ -27,7 +27,7 @@ app.use(express.json())
 app.use(cors())
 
 // Routes
-app.use('/auth', userRoutes)
+app.use('/user', userRoutes)
 app.use('/scripts', scriptRoutes)
 
 // Import and Set Nuxt.js options
