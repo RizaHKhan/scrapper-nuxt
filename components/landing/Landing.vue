@@ -8,11 +8,13 @@
     </div>
     <div class="landing__log">
       <div class="landing__log__container">
-        <form class="landing__log__container__form">
+        <form
+          @submit.prevent='log'
+          class="landing__log__container__form">
           <label for="log">Login</label>
           <input
             id="login"
-            v-model="user.logType"
+            v-model="logType"
             type="radio"
             name="log"
             value="login"
@@ -21,20 +23,19 @@
           <label for="log">Register</label>
           <input
             id="register"
-            v-model="user.logType"
+            v-model="logType"
             type="radio"
             name="log"
             value="register"
           />
           <label for="email">Email</label>
-          <input v-model="user.email" name="email" type="email" />
+          <input v-model="email" name="email" type="email" />
           <label for="password">Password</label>
-          <input v-model="user.password" name="password" type="password" />
+          <input v-model="password" name="password" type="password" />
           <input
             type="submit"
             value="Submit"
             class="button--danger"
-            @click="log(user)"
           />
           <a href="#">Forgot Password?</a>
         </form>
@@ -44,22 +45,30 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-
 export default {
   data() {
     return {
-      user: {
-        logType: [],
-        email: '',
-        password: ''
-      }
+      logType: [],
+      email: '',
+      password: ''
     }
   },
   methods: {
-    ...mapActions({
-      log: 'user/log'
-    })
+    async log (e) {
+        const credentials = {
+        email: this.email,
+        password: this.password,
+        logType: this.logType
+      }
+
+      try {
+        if (credentials.logType === 'login') {
+          await this.$auth.login
+        }
+      } catch (error) {
+
+      }
+    }
   }
 }
 </script>

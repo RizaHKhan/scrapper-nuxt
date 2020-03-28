@@ -11,10 +11,13 @@ exports.register = async (req, res) => {
 }
 
 exports.login = async (req, res) => {
-  try {
-    const user = await User.findByCredentials(req.body.email, req.body.password)
-    res.send(user)
-  } catch (error) {
-    res.statu(400).send(error)
-  }
+  console.log('Trying To Login:', req.body)
+  res.send()
+
+  // try {
+  //   const user = await User.findByCredentials(req.body.email, req.body.password)
+  //   res.send(user)
+  // } catch (error) {
+  //   res.status(400).send(error)
+  // }
 }
