@@ -26,5 +26,13 @@ export const actions = {
     } catch (error) {
       console.log(error)
     }
+  },
+  async outbreak ({ commit }) {
+    try {
+      const response = await axios.get('/scripts/outbreak')
+      commit('addToState', response.data)
+    } catch (error) {
+      console.log(error)
+    }
   }
 }

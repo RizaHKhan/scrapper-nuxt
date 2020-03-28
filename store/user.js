@@ -16,6 +16,7 @@ export const actions = {
         await axios.post('user/register', { email: log.email, password: log.password })
       } else {
         await axios.post('user/login', { email: log.email, password: log.password })
+        this.$router.push('/dashboard')
       }
     } catch (error) {
       console.log(error)
