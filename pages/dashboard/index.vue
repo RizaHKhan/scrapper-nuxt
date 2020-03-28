@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>This is the dashboard index</h1>
+    <h1>Please login to view your specific user scripts</h1>
   </div>
 </template>

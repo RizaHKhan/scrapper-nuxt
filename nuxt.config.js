@@ -45,9 +45,37 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
+  ],
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/auth/login',
+            method: 'post',
+            propertyName: false
+          },
+          logout: {
+            url: '/auth/logout',
+            method: 'post'
+          },
+          user: {
+            url: '/auth/profile',
+            method: 'get',
+            propertyName: false
+          }
+        },
+        tokenRequired: false,
+        tokenType: false
+      }
+    }
+  },
   axios: {
-    baseUrl: process.env.baseURL || '\'http://localhost:3000\''
+    baseUrl: process.env.baseURL || '\'http://localhost:3000\'',
+    credentials: true
   },
   /*
    ** Build configuration
