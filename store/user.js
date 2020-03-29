@@ -4,7 +4,9 @@ export const state = () => ({
   token: ''
 })
 
-export const getters = {}
+export const getters = {
+  token: state => state.token
+}
 
 export const mutations = {
   commitToken (state, token) {
