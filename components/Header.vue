@@ -17,7 +17,7 @@
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link class="button" to="/">
+        <nuxt-link @click="logout" class="button" to="/">
           <font-awesome-icon :icon="['fas', 'plug']" />
           Logout
         </nuxt-link>
@@ -25,3 +25,15 @@
     </ul>
   </div>
 </template>
+
+<script>
+import { mapActions } from 'vuex'
+
+export default {
+  methods: {
+    ...mapActions({
+      logout: 'user/logout'
+    })
+  }
+}
+</script>

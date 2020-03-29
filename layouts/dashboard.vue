@@ -13,6 +13,7 @@ import Footer from '@/components/Footer'
 import Sidebar from '@/components/Sidebar'
 
 export default {
+  middleware: 'auth',
   components: {
     Header,
     Footer,
