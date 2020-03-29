@@ -5,13 +5,13 @@
     </a>
     <ul class="header__nav">
       <li>
-        <nuxt-link class="button" to="/dashboard">
+        <nuxt-link class="button" :to="'/dashboard/' + user._id">
           <font-awesome-icon :icon="['fa', 'columns']" />
           Dashboard
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link class="button" to="/tickets">
+        <nuxt-link class="button" :to="'/tickets/' + user._id">
           <font-awesome-icon :icon="['fa', 'ticket-alt']" />
           Ticket
         </nuxt-link>
@@ -27,9 +27,14 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  computed: {
+    ...mapGetters({
+      user: 'user/user'
+    })
+  },
   methods: {
     ...mapActions({
       logout: 'user/logout'
