@@ -10,12 +10,12 @@
           Dashboard
         </nuxt-link>
       </li>
-      <li>
+      <!-- <li>
         <nuxt-link class="button" :to="'/tickets/' + user._id">
           <font-awesome-icon :icon="['fa', 'ticket-alt']" />
           Ticket
         </nuxt-link>
-      </li>
+      </li> -->
       <li>
         <nuxt-link @click="logout" class="button" to="/">
           <font-awesome-icon :icon="['fas', 'plug']" />
