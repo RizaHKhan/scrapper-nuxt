@@ -54,20 +54,14 @@ export default {
     }
   },
   methods: {
-    async log (e) {
-        const credentials = {
+    async log () {
+        const user = {
         email: this.email,
         password: this.password,
         logType: this.logType
       }
 
-      try {
-        if (credentials.logType === 'login') {
-          await this.$auth.login
-        }
-      } catch (error) {
-
-      }
+      this.$store.dispatch('user/log', user)
     }
   }
 }

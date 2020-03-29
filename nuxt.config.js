@@ -60,8 +60,5 @@ module.exports = {
   },
   router: {
     middleware: 'log'
-  },
-  generate: {
-    fallback: true
   }
 }

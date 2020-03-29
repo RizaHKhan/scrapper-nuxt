@@ -4,9 +4,10 @@ exports.register = async (req, res) => {
   try {
     const user = new User(req.body)
     await user.save()
+    console.log(user)
     res.send(user)
   } catch (error) {
-    res.statu(400).send(error)
+    res.status(400).send(error)
   }
 }
 

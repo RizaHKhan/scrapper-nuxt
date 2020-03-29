@@ -1,6 +1,6 @@
 const express = require('express')
-const router = express.Router()
 const scriptController = require('../controller/scriptController')
+const router = express.Router()
 
 router.get('/checklist', scriptController.checklist)
 router.get('/outbreak', scriptController.outbreak)

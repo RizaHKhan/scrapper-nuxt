@@ -1,4 +1,3 @@
-// import Vue from 'vue'
 import axios from 'axios'
 
 export const state = () => ({
@@ -10,16 +9,30 @@ export const getters = {}
 export const mutations = {}
 
 export const actions = {
-  async log ({ commit }, log) {
-    try {
-      if (log.logType === 'register') {
-        await axios.post('user/register', { email: log.email, password: log.password })
-      } else {
-        await axios.post('user/login', { email: log.email, password: log.password })
-        this.$router.push('/dashboard')
+  async log ({ commit }, user) {
+
+    if (user.logType === 'register') {
+      try {
+        const response = await axios.post('user/register', { email: user.email, password: user.password })
+        console.log(response.data)
+      } catch (error) {
+        if (error.response) {
+          console.log(error.response.data)
+        } else {
+          console.log(error)
+        }
       }
-    } catch (error) {
-      console.log(error)
+    } else {
+      try {
+        await axios.post('user/login', { email: user.email, password: user.password })
+        this.$router.push('/dashboard')
+      } catch (error) {
+        if (error.response) {
+          console.log(error.response)
+        } else {
+          console.log(error)
+        }
+      }
     }
   }
 }

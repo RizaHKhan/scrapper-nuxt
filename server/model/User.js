@@ -5,7 +5,8 @@ const jwt = require('jsonwebtoken')
 const UserSchema = new mongoose.Schema({
   email: {
     type: String,
-    required: [true, 'Email is required']
+    required: [true, 'Email is required'],
+    unique: true
   },
   password: {
     type: String,
@@ -22,26 +23,28 @@ UserSchema.pre('save', async function (next) {
   next()
 })
 
-UserSchema.methods.generateAuthToken = async function () {
-  const user = this
-  const token = jwt.sign({ _id: user._id.toString() }, 'ScrapperProBro')
-  return token
-}
-
 UserSchema.statics.findByCredentials = async (email, password) => {
-  const user = User.find({ email })
+  const user = await User.findOne({ email })
 
   if (!user) {
     throw new Error('User not found.')
   }
+
+  console.log('user:', user.password)
 
   const isMatch = await bcrypt.compare(password, user.password)
 
   if (!isMatch) {
     throw new Error('Login failed, please try again later!')
   }
-
+  console.log('before is match')
   return user
+}
+
+UserSchema.methods.generateAuthToken = async function () {
+  const user = this
+  const token = jwt.sign({ _id: user._id.toString() }, 'ScrapperProBro')
+  return token
 }
 
 const User = mongoose.model('User', UserSchema)
