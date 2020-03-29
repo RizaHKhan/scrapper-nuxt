@@ -19,9 +19,13 @@ export const mutations = {
 }
 
 export const actions = {
-  async checklist ({ commit }) {
+  async checklist ({ commit }, token) {
     try {
-      const response = await axios.get('/scripts/checklist')
+      const response = await axios.post('/scripts/checklist', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
       commit('addToState', response.data)
     } catch (error) {
       console.log(error)
@@ -29,7 +33,7 @@ export const actions = {
   },
   async outbreak ({ commit }) {
     try {
-      const response = await axios.get('/scripts/outbreak')
+      const response = await axios.post('/scripts/outbreak')
       commit('addToState', response.data)
     } catch (error) {
       console.log(error)
@@ -37,7 +41,7 @@ export const actions = {
   },
   async stackoverflow ({ commit }) {
     try {
-      const response = await axios.get('/scripts/stackoverflow')
+      const response = await axios.post('/scripts/stackoverflow')
       commit('addToState', response.data)
     } catch (error) {
       console.log(error)

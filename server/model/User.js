@@ -13,6 +13,10 @@ const UserSchema = new mongoose.Schema({
     required: [true, 'Password is required'],
     minlength: [5, 'Password must be at least 5 characters long']
   },
+  scripts: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Script'
+  }],
   tokens: [{
     token: {
       type: String,
@@ -46,7 +50,7 @@ UserSchema.statics.findByCredentials = async (email, password) => {
 
 UserSchema.methods.generateAuthToken = async function () {
   const user = this
-  const token = jwt.sign({ _id: user._id.toString() }, 'ScrapperProBro')
+  const token = jwt.sign({ _id: user._id.toString() }, 'ScrapperProBro', { expiresIn: '1 minute' })
 
   // Save generated token to database
   user.tokens = user.tokens.concat({ token })
