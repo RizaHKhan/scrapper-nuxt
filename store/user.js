@@ -1,19 +1,24 @@
 import axios from 'axios'
 
 export const state = () => ({
-  user: ''
+  token: ''
 })
 
 export const getters = {}
 
-export const mutations = {}
+export const mutations = {
+  commitToken (state, token) {
+    state.token = token
+  }
+}
 
 export const actions = {
   async log ({ commit }, user) {
 
     if (user.logType === 'register') {
       try {
-        await axios.post('user/register', { email: user.email, password: user.password })
+        const response = await axios.post('user/register', { email: user.email, password: user.password })
+        commit('commitToken', response.data.token)
         this.$router.push('/dashboard')
       } catch (error) {
         if (error.response) {
@@ -24,7 +29,9 @@ export const actions = {
       }
     } else {
       try {
-        await axios.post('user/login', { email: user.email, password: user.password })
+        const response = await axios.post('user/login', { email: user.email, password: user.password })
+        console.log(response.data.token)
+        commit('commitToken', response.data.token)
         this.$router.push('/dashboard')
       } catch (error) {
         if (error.response) {
