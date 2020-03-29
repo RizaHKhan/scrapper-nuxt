@@ -12,7 +12,13 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Password is required'],
     minlength: [5, 'Password must be at least 5 characters long']
-  }
+  },
+  tokens: [{
+    token: {
+      type: String,
+      required: true
+    }
+  }]
 })
 
 UserSchema.pre('save', async function (next) {
@@ -30,20 +36,22 @@ UserSchema.statics.findByCredentials = async (email, password) => {
     throw new Error('User not found.')
   }
 
-  console.log('user:', user.password)
-
   const isMatch = await bcrypt.compare(password, user.password)
 
   if (!isMatch) {
     throw new Error('Login failed, please try again later!')
   }
-  console.log('before is match')
   return user
 }
 
 UserSchema.methods.generateAuthToken = async function () {
   const user = this
   const token = jwt.sign({ _id: user._id.toString() }, 'ScrapperProBro')
+
+  // Save generated token to database
+  user.tokens = user.tokens.concat({ token })
+  await user.save()
+
   return token
 }
 

@@ -4,8 +4,8 @@ exports.register = async (req, res) => {
   try {
     const user = new User(req.body)
     await user.save()
-    console.log(user)
-    res.send(user)
+    const token = await user.generateAuthToken()
+    res.send({ user, token })
   } catch (error) {
     res.status(400).send(error)
   }

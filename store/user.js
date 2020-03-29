@@ -13,8 +13,8 @@ export const actions = {
 
     if (user.logType === 'register') {
       try {
-        const response = await axios.post('user/register', { email: user.email, password: user.password })
-        console.log(response.data)
+        await axios.post('user/register', { email: user.email, password: user.password })
+        this.$router.push('/dashboard')
       } catch (error) {
         if (error.response) {
           console.log(error.response.data)
