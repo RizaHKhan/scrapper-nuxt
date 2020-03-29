@@ -7,6 +7,10 @@
         <button @click="checklist" class="button">Run</button>
       </li>
       <li class="scripts__list__item">
+        <p>StackOverflow</p>
+        <button @click="stackoverflow" class="button">Run</button>
+      </li>
+      <li class="scripts__list__item">
         <p>Outbreak</p>
         <button @click="outbreak" class="button">Run</button>
       </li>
@@ -21,7 +25,8 @@ export default {
   methods: {
     ...mapActions({
       checklist: 'script/checklist',
-      outbreak: 'script/outbreak'
+      outbreak: 'script/outbreak',
+      stackoverflow: 'script/stackoverflow'
     })
   }
 }

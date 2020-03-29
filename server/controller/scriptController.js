@@ -27,3 +27,16 @@ exports.outbreak = (req, res) => {
     console.log(err)
   }
 }
+
+exports.stackoverflow = (req, res) => {
+  try {
+    stackoverflow().then((data) => {
+      res.send(data)
+    }).catch(e => {
+      console.log(e)
+      res.send(e)
+    })
+  } catch (err) {
+    console.log(err)
+  }
+}

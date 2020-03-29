@@ -34,5 +34,13 @@ export const actions = {
     } catch (error) {
       console.log(error)
     }
+  },
+  async stackoverflow ({ commit }) {
+    try {
+      const response = await axios.get('/scripts/stackoverflow')
+      commit('addToState', response.data)
+    } catch (error) {
+      console.log(error)
+    }
   }
 }

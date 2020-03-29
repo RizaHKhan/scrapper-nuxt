@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const state = () => ({
-  token: ''
+  token: null
 })
 
 export const getters = {
