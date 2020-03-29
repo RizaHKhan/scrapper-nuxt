@@ -4,24 +4,29 @@
     <ul class="scripts__list">
       <li class="scripts__list__item">
         <p>Checklist</p>
-        <button @click="checklist" class="button">Run</button>
+        <button @click="checklist(token)" class="button">Run</button>
       </li>
       <li class="scripts__list__item">
         <p>StackOverflow</p>
-        <button @click="stackoverflow" class="button">Run</button>
+        <button @click="stackoverflow(token)" class="button">Run</button>
       </li>
       <li class="scripts__list__item">
         <p>Outbreak</p>
-        <button @click="outbreak" class="button">Run</button>
+        <button @click="outbreak(token)" class="button">Run</button>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  computed: {
+    ...mapGetters({
+      token: 'user/token'
+    })
+  },
   methods: {
     ...mapActions({
       checklist: 'script/checklist',

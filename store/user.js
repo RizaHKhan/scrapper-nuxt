@@ -6,7 +6,8 @@ export const state = () => ({
 })
 
 export const getters = {
-  user: state => state.user
+  user: state => state.user,
+  token: state => state.token
 }
 
 export const mutations = {
@@ -39,7 +40,6 @@ export const actions = {
     } else {
       try {
         const response = await axios.post('user/login', { email: user.email, password: user.password })
-        console.log(response.data)
         commit('commitToken', response.data.token)
         commit('commitUser', response.data.user)
         this.$router.push('/dashboard/' + response.data.user._id)

@@ -31,17 +31,25 @@ export const actions = {
       console.log(error)
     }
   },
-  async outbreak ({ commit }) {
+  async outbreak ({ commit }, token) {
     try {
-      const response = await axios.post('/scripts/outbreak')
+      const response = await axios.post('/scripts/outbreak', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
       commit('addToState', response.data)
     } catch (error) {
       console.log(error)
     }
   },
-  async stackoverflow ({ commit }) {
+  async stackoverflow ({ commit }, token) {
     try {
-      const response = await axios.post('/scripts/stackoverflow')
+      const response = await axios.post('/scripts/stackoverflow', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
       commit('addToState', response.data)
     } catch (error) {
       console.log(error)
