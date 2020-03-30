@@ -2,11 +2,9 @@ const puppeteer = require('puppeteer')
 
 const stackoverflow = async () => {
   const baseUrl = 'https://stackoverflow.com/questions/tagged/java'
-  console.log(baseUrl)
   const browser = await puppeteer.launch({ args: ['--disable-gpu', '--no-sandbox', '--lang=en-US', '--disable-setuid-sandbox', '--disable-dev-shm-usage'], ignoreDefaultArgs: ['--disable-extensions'] })
   const page = await browser.newPage()
   await page.goto(baseUrl, { waitUntil: 'networkidle2' })
-  // const navigationPromise = page.waitForNavigation()
 
   const scrapedData = await page.evaluate(() => {
     const dataArray = []

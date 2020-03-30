@@ -37,7 +37,7 @@
             value="Submit"
             class="button--danger"
           />
-          <a href="#">Forgot Password?</a>
+          <a href="#" class="forgot_password">Forgot Password?</a>
         </form>
       </div>
     </div>
