@@ -19,38 +19,41 @@ export const mutations = {
 }
 
 export const actions = {
-  async checklist ({ commit }, token) {
+  async checklist (context) {
+    const token = context.rootState.user.token
     try {
       const response = await axios.post('/scripts/checklist', {
         headers: {
           Authorization: `Bearer ${token}`
         }
       })
-      commit('addToState', response.data)
+      context.commit('addToState', response.data)
     } catch (error) {
       console.log(error)
     }
   },
-  async outbreak ({ commit }, token) {
+  async outbreak (context) {
+    const token = context.rootState.user.token
     try {
       const response = await axios.post('/scripts/outbreak', {
         headers: {
           Authorization: `Bearer ${token}`
         }
       })
-      commit('addToState', response.data)
+      context.commit('addToState', response.data)
     } catch (error) {
       console.log(error)
     }
   },
-  async stackoverflow ({ commit }, token) {
+  async stackoverflow (context) {
+    const token = context.rootState.user.token
     try {
       const response = await axios.post('/scripts/stackoverflow', {
         headers: {
           Authorization: `Bearer ${token}`
         }
       })
-      commit('addToState', response.data)
+      context.commit('addToState', response.data)
     } catch (error) {
       console.log(error)
     }
