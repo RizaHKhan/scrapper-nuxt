@@ -11,31 +11,43 @@
         <form
           @submit.prevent='log'
           class="landing__log__container__form">
-          <label for="log">Login</label>
-          <input
-            id="login"
-            v-model="logType"
-            type="radio"
-            name="log"
-            value="login"
-            checked
-          />
-          <label for="log">Register</label>
-          <input
-            id="register"
-            v-model="logType"
-            type="radio"
-            name="log"
-            value="register"
-          />
-          <label for="email">Email</label>
-          <input v-model="email" name="email" type="email" />
-          <label for="password">Password</label>
-          <input v-model="password" name="password" type="password" />
+          <div class="landing__log__container__form--row login">
+            <label for="log">Login</label>
+            <input
+              id="login"
+              v-model="logType"
+              type="radio"
+              name="log"
+              value="login"
+              checked
+            />
+          </div>
+          <div class="landing__log__container__form--row register">
+            <label for="log">Register</label>
+            <input
+              id="register"
+              v-model="logType"
+              type="radio"
+              name="log"
+              value="register"
+            />
+          </div>
+          <div class="landing__log__container__form--row email">
+            <label for="email">
+              <font-awesome-icon :icon="['fas', 'envelope']" />
+            </label>
+            <input v-model="email" name="email" type="email" placeholder="Email..."/>
+          </div>
+          <div class="landing__log__container__form--row password">
+            <label for="password">
+              <font-awesome-icon :icon="['fas', 'unlock']" />
+            </label>
+            <input v-model="password" name="password" type="password" placeholder="Password..."/>
+          </div>
           <input
             type="submit"
             value="Submit"
-            class="button--danger"
+            class="button--neutral submit-btn"
           />
           <a href="#" class="forgot_password">Forgot Password?</a>
         </form>

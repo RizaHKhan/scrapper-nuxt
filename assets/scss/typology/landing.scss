@@ -40,21 +40,34 @@
     &__container {
 
       &__form {
-        font-size: 1.2rem;
+        padding: 2em;
+        overflow: hidden;
+        border-radius: $radius;
+        background: $red;
+
+        label, input {
+          font-size: 1.5rem;
+          padding: .5em;
+        }
 
         label {
-          margin: auto 0;
+
         }
 
         input {
-          font-size: 1rem;
-          margin: auto 0;
-          padding: .5em;
-          border: 0;
+
         }
 
         .forgot_password {
-          font-size: .8rem;
+          text-align: right;
+        }
+
+        &--row {
+          background: $dark;
+          color: $subColor;
+          overflow: hidden;
+
+
         }
       }
     }

@@ -25,3 +25,7 @@
   color: $headerColor;
   background: $red;
 }
+
+.button--neutral {
+  @extend %button;
+}
